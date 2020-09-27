@@ -1,0 +1,117 @@
+{% extends './base.html' %}
+{% load static %}
+
+{% block content %}
+<section id="main-container" class="main-container">
+   <div class="container">
+      <div class="row">
+
+         <div class="col-lg-8 col-md-8 col-sm-12 mx-auto">
+
+            {% for post in posts %}
+            <div class="post">
+               <div class="post-media post-image">
+                  <a href="{% url 'blog-post-detail' post.slug %}">
+                     <img src="{{ post.cover_image.url }}" class="img-fluid" alt="">
+                  </a>
+               </div>
+
+               <div class="post-body">
+                  <div class="post-meta">
+                     <span class="post-author">
+                        <a href="#">BY {{ post.author.get_full_name }}</a>
+                     </span>
+
+                     <div class="post-meta-date">
+                        {{ post.date_published | date:"F d, Y" }}
+                     </div>
+                  </div>
+                  <div class="entry-header">
+                     <h2 class="entry-title">
+                        <a href="{% url 'blog-post-detail' post.slug %}">{{ post.title }}</a>
+                     </h2>
+                  </div><!-- header end -->
+
+                  <div class="entry-content">
+                     <p>{{ post.content | slice:250 | safe }}</p>
+                  </div>
+
+                  <div class="post-footer">
+                     <a href="{% url 'blog-post-detail' post.slug %}" class="btn-link">
+                        Read More
+                        <i class="icon icon-arrow-right"></i>
+                     </a>
+                     {% if post.author == request.user %}
+                     <div class="row">
+                        <div class="col-md-6 my-1">
+                           <a href="{% url 'update-post' post.slug %}" class="btn bg-info w-100">Edit Post</a>
+                        </div>
+                        <div class="col-md-6 my-1">
+                           <a href="{% url 'delete-post' post.slug %}" class="btn bg-danger w-100">Delete Post</a>
+                        </div>
+                     </div>
+                     {% endif %}
+                  </div>
+
+
+
+               </div><!-- post-body end -->
+            </div><!-- 1st post end -->
+            {% endfor %}
+
+
+            {% if is_paginated %}
+
+            <div class="pages mt-60">
+               <nav aria-label="Page navigation ">
+                  <ul class="pagination mx-auto">
+                     {% if page_obj.has_previous %}
+                     <li class="page-item">
+                        <a class="page-link" href="?page=1">
+                           <i class="fa fa-step-backward"></i>
+                        </a>
+                     </li>
+                     <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+                           <i class="fa fa-fast-backward"></i>
+                        </a>
+                     </li>
+                     {% endif %}
+
+                     {% for num in page_obj.paginator.page_range %}
+                     {% if page_obj.number == num %}
+                     <li class="page-item">
+                        <a class="page-link bg-secondary text-white" href="?page={{ num }}">
+                           {{ num }}
+                        </a>
+                     </li>
+                     {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                     <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                     {% endif %}
+                     {% endfor %}
+
+                     {% if page_obj.has_next %}
+                     <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.next_page_number }}">
+                           <i class="fa fa-fast-forward"></i>
+                        </a>
+                     </li>
+                     <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">
+                           <i class="fa fa-step-forward"></i>
+                        </a>
+                     </li>
+                     {% endif %}
+
+                     {% endif %}
+                  </ul>
+               </nav>
+            </div>
+
+         </div><!-- Content Col end -->
+
+      </div><!-- Main row end -->
+
+   </div><!-- Container end -->
+</section><!-- Main container end -->
+{% endblock content %}

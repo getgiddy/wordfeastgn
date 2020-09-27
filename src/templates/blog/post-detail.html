@@ -1,0 +1,100 @@
+{% extends './base.html' %}
+{% load static %}
+
+
+{% block banner %}
+{% include './components/blog-detail-banner.html' %}
+{% endblock banner %}
+
+
+{% block content %}
+<section class="main-container pb-0" id="main-container">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 mx-auto">
+				<div class="blog-details">
+					<div class="entry-header">
+						<h2 class="entry-title text-center">
+							{{ post.title }}
+						</h2>
+					</div><!-- header end -->
+					<div class="post-meta text-center">
+						<span class="post-author"><a href="#">{{ post.author.get_full_name }}</a></span>
+						<span class="post-meta-date">{{ post.date_published | date:"F d, Y" }}</span>
+					</div>
+
+					{% comment %}
+					<div class="post-media post-image text-center">
+						<img class="img-fluid" src="{{ post.cover_image.url }}" alt="">
+					</div>
+					{% endcomment %}
+
+					<div class="post-content post-single">
+						<div class="post-body clearfix">
+							<div class="entry-content">
+								{{ post.content | safe }}
+							</div>
+							<!-- entry content end-->
+							<div class="post-footer clearfix">
+								<div class="share-items float-right">
+									<span>Share : </span>
+									<ul class="post-social-icons unstyled">
+										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+										<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+										<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+										<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+									</ul>
+								</div>
+								<!-- Share items end-->
+							</div>
+							<!-- Post footer end-->
+						</div>
+						<!-- post-body end-->
+						<div class="author-box solid-bg mrb-40">
+							<div class="author-img float-left">
+								<img src="{{ post.author.authorprofile.avatar.url }}" alt="">
+							</div>
+							<div class="author-info">
+								<div class="post-social-icons float-right unstyled">
+									{% if request.user.authorprofile.website %}
+									<a href="{{ request.user.authorprofile.website }}">
+										<i class="fa fa-globe"></i>
+									</a>
+									{% endif %}
+									{% if post.author.authorprofile.twitter %}
+									<a href="{{ post.author.authorprofile.twitter }}">
+										<i class="fa fa-twitter"></i>
+									</a>
+									{% endif %}
+									{% if post.author.authorprofile.facebook %}
+									<a href="{{ post.author.authorprofile.facebook }}">
+										<i class="fa fa-facebook"></i>
+									</a>
+									{% endif %}
+									{% if post.author.authorprofile.instagram %}
+									<a href="{{ post.author.authorprofile.instagram }}">
+										<i class="fa fa-instagram"></i>
+									</a>
+									{% endif %}
+								</div>
+								<h3>{{ post.author.get_full_name }}</h3>
+
+								<p class="author-url">
+									<a href="{% url 'author-posts' post.author %}">
+										View posts
+									</a>
+								</p>
+
+								<p>{{ post.author.authorprofile.bio }}</p>
+							</div>
+						</div>
+						<!-- Author box end-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock content %}

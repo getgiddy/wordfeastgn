@@ -1,0 +1,15 @@
+{% extends 'components/header.html' %}
+
+{% block header_button %}
+
+{% if request.user.is_authenticated %}
+<a class="ticket-btn btn" href="{% url 'author-profile' request.user %}">
+    Profile
+</a>
+{% else %}
+<a class="ticket-btn btn" href="#">
+    Author Login
+</a>
+{% endif %}
+
+{% endblock header_button %}

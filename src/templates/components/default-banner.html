@@ -1,0 +1,25 @@
+{% load static %}
+<div id="page-banner-area" class="page-banner-area" style="background-image:url(
+        {% block banner_image %}
+        {% static 'images/hero_area/banner_bg.jpg' %}
+        {% endblock banner_image %}
+    )">
+    <!-- Subpage title start -->
+    <div class="page-banner-title">
+        <div class="text-center">
+            <h2>
+                {% block page_title %}
+                WordFeast Gospel Network
+                {% endblock page_title %}
+            </h2>
+            <!-- <ol class="breadcrumb">
+                <li>
+                    <a href="#">Exibit /</a>
+                </li>
+                <li>
+                    blog
+                </li>
+            </ol> -->
+        </div>
+    </div><!-- Subpage title end -->
+</div><!-- Page Banner end -->

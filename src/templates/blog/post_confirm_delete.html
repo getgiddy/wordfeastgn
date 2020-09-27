@@ -1,0 +1,27 @@
+{% extends './base.html' %}
+
+{% block content %}
+<section class="ts-contact-form pt-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto ">
+                <form method="POST">
+                    {% csrf_token %}
+                    <fieldset class="form-group text-center">
+                        <legend class="entry-header my-4">
+                            <h2 class="entry-title text-center">
+                                Delete Post
+                            </h2>
+                        </legend>
+                        <h4>Are you sure you want to delete the post "{{ object.title }}"</h4>
+                    </fieldset>
+                    <div class="form-group text-center">
+                        <button class="btn bg-danger" type="submit">Yes, Delete</button>
+                        <a class="btn bg-secondary" href="{% url 'blog-home' %}">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

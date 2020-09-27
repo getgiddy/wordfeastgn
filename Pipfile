@@ -6,6 +6,9 @@ name = "pypi"
 [packages]
 django = "*"
 python-dotenv = "*"
+django-ckeditor = "*"
+django-crispy-forms = "*"
+pillow = "*"
 
 [dev-packages]
 autopep8 = "*"

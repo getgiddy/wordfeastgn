@@ -1,0 +1,79 @@
+{% extends './base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<section class="ts-contact-form pt-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <!-- Author box start -->
+                <div class="author-box solid-bg mrb-40">
+                    <div class="author-img float-left">
+                        <img src="{{ request.user.authorprofile.avatar.url }}" alt="">
+                    </div>
+                    <div class="author-info">
+                        <div class="post-social-icons float-right unstyled">
+                            {% if request.user.authorprofile.website %}
+                            <a href="{{ request.user.authorprofile.website }}">
+                                <i class="fa fa-globe"></i>
+                            </a>
+                            {% endif %}
+                            {% if request.user.authorprofile.twitter %}
+                            <a href="{{ request.user.authorprofile.twitter }}">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            {% endif %}
+                            {% if request.user.authorprofile.facebook %}
+                            <a href="{{ request.user.authorprofile.facebook }}">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            {% endif %}
+                            {% if request.user.authorprofile.instagram %}
+                            <a href="{{ request.user.authorprofile.instagram }}">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                            {% endif %}
+                        </div>
+                        <h3>{{ request.user.get_full_name }}</h3>
+                        <p>{{ request.user.authorprofile.bio }}</p>
+                        <div class="row">
+                            <div class="col-md-6 my-1">
+                                <a href="{% url 'create-post' %}" class="btn w-100">Create Post</a>
+                            </div>
+                            <div class="col-md-6 my-1">
+                                <a href="{% url 'author-posts' request.user.username %}" class="btn w-100">
+                                    Manage Posts
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 my-1">
+                                <a href="#" class="btn w-100">Change Password</a>
+                            </div>
+                            <div class="col-md-6 my-1">
+                                <a href="#" class="btn w-100">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Author box end -->
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class="entry-header my-4">
+                            <h2 class="entry-title text-center">
+                                Author Profile Info
+                            </h2>
+                        </legend>
+                        {{ u_form|crispy }}
+                        {{ p_form|crispy }}
+                    </fieldset>
+                    <div class="form-group text-center">
+                        <button class="btn" type="submit">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

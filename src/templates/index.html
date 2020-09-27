@@ -14,32 +14,12 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 
    <!-- Site Title -->
-   <title>Wordfeast Gospel Network</title>
+   <title>WordFeast Gospel Network</title>
 
    <!-- Favicon -->
    <link rel="shortcut icon" href="{% static 'images/logos/logo.jpeg' %}" type="image/x-icon">
 
-   <!-- CSS
-         ================================================== -->
-   <!-- Bootstrap -->
-   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-
-   <!-- FontAwesome -->
-   <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
-   <!-- Animation -->
-   <link rel="stylesheet" href="{% static 'css/animate.css' %}">
-   <!-- magnific -->
-   <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
-   <!-- carousel -->
-   <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
-   <!-- isotop -->
-   <link rel="stylesheet" href="{% static 'css/isotop.css' %}">
-   <!-- ico fonts -->
-   <link rel="stylesheet" href="{% static 'css/xsIcon.css' %}">
-   <!-- Template styles-->
-   <link rel="stylesheet" href="{% static 'css/style.css' %}">
-   <!-- Responsive styles-->
-   <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+   {% include 'components/styles.html' %}
 
    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -52,165 +32,9 @@
 
 <body>
    <div class="body-inner">
-      <!-- Header start -->
-      <header id="header" class="header header-transparent nav-border">
-         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light">
-               <!-- logo-->
-               <a class="navbar-brand" href="index-2.html">
-                  <img src="{% static 'images/logos/logo.jpeg' %}" alt="" height="48">
-               </a>
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                  aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"><i class="icon icon-menu"></i></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                  <ul class="navbar-nav ml-auto">
-                     <li class="dropdown nav-item active">
-                        <a href="#" class="" data-toggle="dropdown">Home <i class="fa fa-angle-down"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                           <li><a href="index-2.html">Home One</a></li>
-                           <li><a href="index-3.html">Home Two</a></li>
-                           <li><a href="index-4.html">Home Three</a></li>
-                           <li><a href="index-5.html">Home Four</a></li>
-                           <li><a href="index-6.html">Home Five</a></li>
-                        </ul>
-                     </li>
-                     <li class="dropdown nav-item">
-                        <a href="#" class="" data-toggle="dropdown">About <i class="fa fa-angle-down"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                           <li><a href="about-us.html">About Us</a></li>
-                           <li><a href="gallery.html">Gallery</a></li>
-                           <li><a href="faq.html">FAQ</a></li>
-                           <li><a href="pricing.html">Pricing Table</a></li>
-                           <li><a href="sponsors-1.html">Sponsors</a></li>
-                           <li><a href="venue.html">Venue</a></li>
-                           <li><a href="404.html">Erro Page</a></li>
-                        </ul>
-                     </li>
-                     <li class="nav-item dropdown">
-                        <a href="#" class="" data-toggle="dropdown">Speakers <i class="fa fa-angle-down"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                           <li><a href="speakers-1.html">Speakers-1</a></li>
-                           <li><a href="speakers-2.html">Speakers-2</a></li>
-                        </ul>
+      {% include 'components/header.html' %}
 
-                     </li>
-                     <li class="nav-item dropdown">
-                        <a href="#" class="" data-toggle="dropdown">Schedule <i class="fa fa-angle-down"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                           <li><a href="schedule-list.html">Schedule List</a></li>
-                           <li><a href="schedule-tab-1.html">Schedule Tab 1</a></li>
-                           <li><a href="schedule-tab-2.html">Schedule Tab 2</a></li>
-                        </ul>
-                     </li>
-                     <li class="nav-item dropdown">
-                        <a href="#"> Blog <i class="fa fa-angle-down"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                           <li><a href="blog.html">Blog</a></li>
-                           <li><a href="news-single.html">Blog Details</a></li>
-                        </ul>
-                     </li>
-                     <li class="nav-item">
-                        <a href="contact.html">Contact</a>
-                     </li>
-                     <li class="header-ticket nav-item">
-                        <a class="ticket-btn btn" href="pricing.html"> Buy Ticket
-                        </a>
-                     </li>
-                  </ul>
-               </div>
-            </nav>
-         </div><!-- container end-->
-      </header>
-      <!--/ Header end -->
-
-      <!-- banner start-->
-      <section class="main-slider owl-carousel">
-         <div class="banner-item overlay" style="background-image:url({% static 'images/hero_area/banner3.jpg' %})">
-            <div class="container">
-               <div class="row">
-                  <div class="col-lg-11 mx-auto">
-                     <div class="banner-content-wrap text-center">
-                        <img class="title-shap-img" src="{% static 'images/shap/title-white.png' %}" alt="">
-                        <p class="banner-info">5 to 7 June 2019, Waterfront Hotel, London</p>
-                        <h1 class="banner-title">digital thinkers Meet</h1>
-
-                        <p class="banner-desc">
-                           How you transform your business as technology, consumer, habits industry dynamic
-                           s change? Find out from those leading the charge.
-                        </p>
-                        <!-- Countdown end -->
-                        <div class="banner-btn">
-                           <a href="#" class="btn">Get Ticket</a>
-                           <a href="#" class="btn fill">Know More</a>
-                        </div>
-
-                     </div>
-                     <!-- Banner content wrap end -->
-                  </div><!-- col end-->
-
-               </div><!-- row end-->
-            </div>
-            <!-- Container end -->
-         </div><!-- banner item end-->
-         <div class="banner-item overlay" style="background-image:url({% static 'images/hero_area/banner4.jpg' %})">
-            <div class="container">
-               <div class="row">
-                  <div class="col-lg-10 mx-auto">
-                     <div class="banner-content-wrap text-center">
-                        <img class="title-shap-img" src="{% static 'images/shap/title-white.png' %}" alt="">
-                        <p class="banner-info">5 to 7 June 2019, Waterfront Hotel, London</p>
-                        <h1 class="banner-title">digital thinkers Meet up</h1>
-
-                        <p class="banner-desc">
-                           How you transform your business as technology, consumer, habits industry dynamic
-                           s change? Find out from those leading the charge.
-                        </p>
-                        <!-- Countdown end -->
-                        <div class="banner-btn">
-                           <a href="#" class="btn">Get Ticket</a>
-                           <a href="#" class="btn fill">Know More</a>
-                        </div>
-
-                     </div>
-                     <!-- Banner content wrap end -->
-                  </div><!-- col end-->
-
-               </div><!-- row end-->
-            </div>
-            <!-- Container end -->
-         </div><!-- banner item end-->
-         <div class="banner-item overlay" style="background-image:url({% static 'images/hero_area/banner5.jpg' %})">
-            <div class="container">
-               <div class="row">
-                  <div class="col-lg-10 mx-auto">
-                     <div class="banner-content-wrap text-center">
-                        <img class="title-shap-img" src="{% static 'images/shap/title-white.png' %}" alt="">
-                        <p class="banner-info">5 to 7 June 2019, Waterfront Hotel, London</p>
-                        <h1 class="banner-title">digital thinkers Meet up</h1>
-
-                        <p class="banner-desc">
-                           How you transform your business as technology, consumer, habits industry dynamic
-                           s change? Find out from those leading the charge.
-                        </p>
-                        <!-- Countdown end -->
-                        <div class="banner-btn">
-                           <a href="#" class="btn">Get Ticket</a>
-                           <a href="#" class="btn fill">Know More</a>
-                        </div>
-
-                     </div>
-                     <!-- Banner content wrap end -->
-                  </div><!-- col end-->
-
-               </div><!-- row end-->
-            </div>
-            <!-- Container end -->
-         </div><!-- banner item end-->
-
-      </section>
-      <!-- banner end-->
+      {% include 'components/landing-banner.html' %}
 
       <!--count down start-->
       <section class="ts-count-down">
@@ -1444,135 +1268,11 @@
       <!-- ts ts sponsors end-->
 
 
-      <!-- ts footer area start-->
-      <div class="footer-area">
-
-         <!-- ts-book-seat start-->
-         <section class="ts-book-seat" style="background-image: url({% static 'images/book_seat_img.jpg' %})">
-            <div class="container">
-               <div class="row">
-                  <div class="col-lg-8 mx-auto">
-                     <div class="book-seat-content text-center mb-70">
-                        <h2 class="section-title white">
-                           <span>Hurry up!</span>
-                           Book your Seat
-                        </h2>
-                        <a href="#" class="btn">Buy Ticket</a>
-                     </div><!-- book seat end-->
-                  </div><!-- col end-->
-
-               </div><!-- row end-->
-               <div class="ts-footer-newsletter">
-                  <div class="ts-newsletter"
-                     style="background-image: url({% static 'images/shap/subscribe_pattern.png' %})">
-                     <div class="row">
-                        <div class="col-lg-6 mx-auto">
-                           <div class="ts-newsletter-content">
-                              <h2 class="section-title">
-                                 <span>sUBSCRIBE TO nEWSLETTER</span>
-                                 Want something extra?
-                              </h2>
-                           </div>
-                           <div class="newsletter-form">
-                              <form action="#" method="post" class="media align-items-end">
-                                 <div class="email-form-group media-body">
-                                    <input type="email" name="email" id="newsletter-form-email" class="form-control"
-                                       placeholder="Your Email" autocomplete="off" required="">
-                                 </div>
-                                 <div class="d-flex ts-submit-btn">
-                                    <button class="btn">Subscribe</button>
-                                 </div>
-                              </form>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div><!-- container end-->
-         </section>
-         <!-- book seat  end-->
-
-         <!-- footer start-->
-         <footer class="ts-footer">
-            <div class="container">
-               <div class="row">
-                  <div class="col-lg-8 mx-auto">
-                     <div class="ts-footer-social text-center mb-30">
-                        <ul>
-                           <li>
-                              <a href="#"><i class="fa fa-facebook"></i></a>
-                           </li>
-                           <li>
-                              <a href="#"><i class="fa fa-twitter"></i></a>
-                           </li>
-                           <li>
-                              <a href="#"><i class="fa fa-google-plus"></i></a>
-                           </li>
-                           <li>
-                              <a href="#"><i class="fa fa-linkedin"></i></a>
-                           </li>
-                           <li>
-                              <a href="#"><i class="fa fa-instagram"></i></a>
-                           </li>
-                        </ul>
-                     </div>
-                     <!-- footer social end-->
-                     <div class="footer-menu text-center mb-25">
-                        <ul>
-                           <li><a href="#">About Eventime</a></li>
-                           <li><a href="#">Blog</a></li>
-                           <li><a href="#">Contact</a></li>
-                           <li><a href="#">Tickets</a></li>
-                           <li><a href="#">Venue</a></li>
-                        </ul>
-                     </div><!-- footer menu end-->
-                     <div class="copyright-text text-center">
-                        <p>&COPY;2020. <a href="{% url 'home' %}">Wordfeast Gospel Network.</a></p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </footer>
-         <!-- footer end-->
-
-         <div class="BackTo">
-            <a href="#" class="fa fa-angle-up" aria-hidden="true"></a>
-         </div>
-      </div>
-      <!-- ts footer area end-->
-
-
-
-
-      <!-- Javascript Files
-            ================================================== -->
-      <!-- initialize jQuery Library -->
-      <script src="{% static 'js/jquery.js' %}"></script>
-
-      <script src="{% static 'js/popper.min.js' %}"></script>
-      <!-- Bootstrap jQuery -->
-      <script src="{% static 'js/bootstrap.min.js' %}"></script>
-      <!-- Counter -->
-      <script src="{% static 'js/jquery.appear.min.js' %}"></script>
-      <!-- Countdown -->
-      <script src="{% static 'js/jquery.jCounter.js' %}"></script>
-      <!-- magnific-popup -->
-      <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
-      <!-- carousel -->
-      <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-      <!-- Waypoints -->
-      <script src="{% static 'js/wow.min.js' %}"></script>
-      <!-- isotop -->
-      <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
-
-      <!-- Template custom -->
-      <script src="{% static 'js/main.js' %}"></script>
+      {% include 'components/footer.html' %}
 
    </div>
    <!-- Body inner end -->
+   {% include 'components/scripts.html' %}
 </body>
-
-
-<!-- index-314:33-->
 
 </html>

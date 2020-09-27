@@ -1,0 +1,28 @@
+{% extends './base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<section class="ts-contact-form pt-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto ">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class="entry-header my-4">
+                            <h2 class="entry-title text-center">
+                                Blog Post
+                            </h2>
+                        </legend>
+                        {{ form.media }}
+                        {{ form |crispy }}
+                    </fieldset>
+                    <div class="form-group text-center">
+                        <button class="btn" type="submit">Publish</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
