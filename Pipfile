@@ -9,6 +9,7 @@ python-dotenv = "*"
 django-ckeditor = "*"
 django-crispy-forms = "*"
 pillow = "*"
+django-photologue = "*"
 
 [dev-packages]
 autopep8 = "*"

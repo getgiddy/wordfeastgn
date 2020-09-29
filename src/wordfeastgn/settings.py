@@ -40,10 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
 
     # Third party
     'crispy_forms',
     'ckeditor',
+    'photologue',
+    'sortedm2m',
 
     # Custom
     'core',
@@ -136,3 +140,6 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 # Crispy Forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# Sites framework
+SITE_ID = 1

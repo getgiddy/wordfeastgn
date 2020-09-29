@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "eb9b51720a88fcdfaf95885341295f6017c1a1c9395e3528860283046967658a"
+            "sha256": "c23a2c17572ddc76dc68c498405acf5a7feb8d842aae72cdab77cf0b4abae533"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -53,6 +53,28 @@
                 "sha256:c163ae80d2e0b22d8fb598047cd0dcef31f81830e127cfecae278ad574167260"
             ],
             "version": "==1.2.2"
+        },
+        "django-photologue": {
+            "hashes": [
+                "sha256:83553abedbcc1875e467489cb982cf9c6a3dfdb9aed59bfc94fbcff46b1d1774",
+                "sha256:f7ed05726003fbb95b86495c1f964d3c9bbad1675ac01cf22d3739afaaa101a7"
+            ],
+            "index": "pypi",
+            "version": "==3.13"
+        },
+        "django-sortedm2m": {
+            "hashes": [
+                "sha256:091e00e12b399ffd8fc74ebf4cc0f14d0bc0e28961c4ac714ca88ae24bd96aa3",
+                "sha256:8acc3638b7a2587533c7776deaa2c6c035220c8f9fff85ed67858a9c6bf51e7c"
+            ],
+            "version": "==3.0.2"
+        },
+        "exifread": {
+            "hashes": [
+                "sha256:269ff3a8eab8e082734a076182cce6fb126116619c0b7c2009bea34502cca213",
+                "sha256:6693de2537bbd1a1184b6d85c6a36b1113e230498c6957cac1485d06c8fa8a60"
+            ],
+            "version": "==2.3.1"
         },
         "pillow": {
             "hashes": [

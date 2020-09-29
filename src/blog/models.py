@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 from django.utils.text import slugify
 from django.utils import timezone
 
@@ -25,6 +26,9 @@ class Post(models.Model):
     def save(self):
         self.slug = unique_post_slug_generator(self)
         super(Post, self).save()
+
+    def get_absolute_url(self):
+        return reverse('blog-post-detail', kwargs={'slug': self.slug})
 
 
 class AuthorProfile(models.Model):
